@@ -1,0 +1,80 @@
+<!doctype html>
+<!-- ============================================================
+     rc-car.html  —  RC CAR PROJECT DETAIL PAGE
+     Edit the description, goals, and image paths below.
+     Shared look: style.css   Back to: projects.html
+     ============================================================ -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RC Car — Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Nav is built automatically by nav.js — edit links there -->
+  <header id="nav" class="nav"></header>
+
+  <!-- ===== PROJECT DETAIL ===== -->
+  <main class="detail">
+    <a class="back-link" href="projects.html">← Back to Projects</a>
+
+    <h1>RC Car</h1>
+    <p class="subtitle">Zero-cost rebuild with salvaged hardware and 3D-printed chassis</p>
+
+    <div class="hero-img">
+      <img src="Images/Rc Car/ZoomedIn.jpeg" alt="RC Car"
+           onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+      <span class="img-fallback">Images/Rc Car/ZoomedIn.jpeg</span>
+    </div>
+
+    <h2>Description</h2>
+    <p>
+      Rebuilt an RC vehicle from scratch at zero cost by salvaging existing electronic and mechanical components and designing a custom 3D-printed chassis in SolidWorks. Working around fixed hardware, including the DC motor, LiPo battery, receiver, stock wheels, shocks, and CV axles, I modeled the frame to accommodate the existing components while maintaining structural integrity and simplifying assembly. I designed the chassis for 3D printing, considering print orientation, component fitment, and ease of assembly.
+    </p>
+    <p>
+      Applied vehicle kinematics principles to the chassis and steering design, incorporating Ackermann steering geometry to reduce tire scrub during turns and refining CV axle alignment to minimize binding and maintain effective power transfer. Through CAD modeling, mechanical integration, and hands-on troubleshooting, I developed a functional RC vehicle using entirely salvaged hardware and free 3D-printing materials. Additional documentation, including project development and build details, is available on my Instagram.
+    </p>
+
+    <h2>Constraints</h2>
+    <ul>
+      <li>Zero budget — no money spent on any parts or materials</li>
+      <li>Limited to existing salvaged hardware: DC motor, LiPo battery, receiver/transceiver, stock wheels, shocks, and CV axles</li>
+      <li>Only manufacturing tool available was a 3D printer</li>
+    </ul>
+
+    <h2>Goals</h2>
+    <ul>
+      <li>Rebuild a fully functional RC vehicle using only salvaged components and free 3D-printing materials</li>
+      <li>Design a custom 3D-printed chassis in SolidWorks optimized for print orientation and assembly</li>
+      <li>Incorporate Ackermann steering geometry to reduce tire scrub during turns</li>
+      <li>Refine CV axle alignment to minimize binding and maintain effective power transfer</li>
+      <li>Accommodate all existing hardware within the new frame</li>
+    </ul>
+
+    <!-- Gallery — uses your actual RC car photos -->
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="shot">
+        <img src="Images/Rc Car/ISOView.jpeg" alt="RC Car isometric view"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">ISOView.jpeg</span>
+      </div>
+    </div>
+
+    <h2>Video</h2>
+    <video controls preload="metadata">
+      <source src="Images/Rc Car/Driving.mov" type="video/quicktime">
+      <source src="Images/Rc Car/Driving.mov" type="video/mp4">
+      Your browser does not support this video format.
+    </video>
+  </main>
+
+  <script src="nav.js"></script>
+</body>
+</html>

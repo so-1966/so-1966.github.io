@@ -1,0 +1,76 @@
+<!doctype html>
+<!-- ============================================================
+     water-incubator.html  —  WATER INCUBATOR PROJECT DETAIL PAGE
+     Edit the description, goals, and image paths below.
+     Shared look: style.css   Back to: projects.html
+     ============================================================ -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Water Incubator — Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Nav is built automatically by nav.js — edit links there -->
+  <header id="nav" class="nav"></header>
+
+  <!-- ===== PROJECT DETAIL ===== -->
+  <main class="detail">
+    <a class="back-link" href="projects.html">← Back to Projects</a>
+
+    <h1>Water Incubator</h1>
+    <p class="subtitle">Portable E. coli Field-Testing Incubator — Team Aquabators</p>
+
+    <div class="hero-img">
+      <img src="Images/Water Incubator/Schematic.png" alt="Water Incubator"
+           onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+      <span class="img-fallback">Images/Water Incubator/Schematic.png</span>
+    </div>
+
+    <h2>Description</h2>
+    <p>
+      To support clean water initiatives in resource-limited regions like Chiapas, Mexico, our engineering team, Team Aquabators, designed a portable, low-cost incubator for field-testing water samples for E. coli. This project was developed as part of a class and presented at the end of the semester. Addressing issues with previous prototypes, including inconsistent heating, fragile breadboard wiring, and poor internal layout, I took the lead on electronic integration and mechanical CAD modeling using SolidWorks. I also worked to reinforce and secure the electronics within a lightweight, modular PLA housing weighing 150 g, designed to attach securely to different field containers.
+    </p>
+    <p>
+      To provide the consistent heating needed for reliable bacterial growth, the final design combines a custom four-pad fabric heating assembly with a user-friendly OLED display for real-time temperature and runtime monitoring. I also modeled the internal assembly in SolidWorks, including custom holders to keep the water test tubes and petrifilms securely in place during transport and help prevent spills or contamination. By combining improved electronic integration with practical mechanical design, we developed a portable, modular solution for conducting water quality tests in remote communities.
+    </p>
+
+    <h2>Design Criteria</h2>
+
+    <p><strong>Constraints:</strong></p>
+    <ul>
+      <li><strong>Uniform Temperature:</strong> Must maintain 36&deg;C &plusmn; 1&deg;C for reliable bacterial growth</li>
+      <li><strong>Test Capacity:</strong> Must accommodate 50 &plusmn; 5 test tubes and petrifilms</li>
+    </ul>
+
+    <p><strong>Objectives:</strong></p>
+    <ul>
+      <li><strong>Electronic Casing Weight:</strong> Less than 250 g (achieved 150 g PLA housing)</li>
+      <li><strong>Easy to Assemble:</strong> Less than 10 minutes of assembly time</li>
+    </ul>
+
+    <!-- Gallery — uses your actual water incubator screenshots -->
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="shot">
+        <img src="Images/Water Incubator/Circuit.png" alt="Circuit layout"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">Circuit.png</span>
+      </div>
+      <div class="shot">
+        <img src="Images/Water Incubator/Results.png" alt="Test results"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">Results.png</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="nav.js"></script>
+</body>
+</html>

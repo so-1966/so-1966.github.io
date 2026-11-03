@@ -1,0 +1,90 @@
+<!doctype html>
+<!-- ============================================================
+     wind-turbine.html  —  WIND TURBINE PROJECT DETAIL PAGE
+     Edit the description, goals, and image paths below.
+     Shared look: style.css   Back to: projects.html
+     ============================================================ -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wind Turbine — Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Nav is built automatically by nav.js — edit links there -->
+  <header id="nav" class="nav"></header>
+
+  <!-- ===== PROJECT DETAIL ===== -->
+  <main class="detail">
+    <a class="back-link" href="projects.html">← Back to Projects</a>
+
+    <h1>Wind Turbine</h1>
+    <p class="subtitle">Floating Offshore Foundation — DOE Collegiate Wind Competition (Team We Love Wind)</p>
+
+    <div class="hero-img">
+      <img src="Images/Wind Turbine/Weldments.jpeg" alt="Wind Turbine"
+           onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+      <span class="img-fallback">Images/Wind Turbine/Weldments.jpeg</span>
+    </div>
+
+    <h2>Description</h2>
+    <p>
+      As part of Rice Wind Energy's entry in the U.S. Department of Energy's Collegiate Wind Competition, our engineering team, We Love Wind, designed a floating offshore wind turbine foundation built to withstand demanding marine and aerodynamic conditions. This project was developed as part of a class and presented at the competition. Working within strict competition requirements, I aided in the CAD modeling and structural testing, using SolidWorks to design the foundation and finite element analysis (FEA) to evaluate stress distribution and structural durability. The design meets strict size constraints, including a maximum width of under 50 cm to fit through the testing tank's circular entry, while prioritizing buoyancy, a lightweight structure, and ease of installation.
+    </p>
+    <p>
+      To maximize power efficiency and meet competition requirements, the foundation is designed to withstand up to 50 N&middot;m of wind-induced torque while keeping tilt below 15 degrees. I conducted FEA simulations to evaluate how the floating structure would handle mechanical loads, stabilize the turbine, and maintain structural integrity under tension from a quick-deploy mooring line system. Designed for rapid assembly, the full turbine and foundation can be installed hands-free in under six minutes.
+    </p>
+
+    <h2>Design Criteria</h2>
+
+    <p><strong>Constraints:</strong></p>
+    <ul>
+      <li><strong>Stably Buoyant:</strong> The design must float and cannot touch the tank (excluding mooring lines). Target: bears at least 8 pounds (~7.5 lb turbine)</li>
+      <li><strong>Size:</strong> Cannot touch the sides of the 50 cm circular entry at the top of the tank. Target: less than 50 cm in diameter</li>
+    </ul>
+
+    <p><strong>Objectives:</strong></p>
+    <ul>
+      <li><strong>Installation Time:</strong> Maximum allowed is 6 minutes. Target: less than 3 minutes</li>
+      <li><strong>Tilt:</strong> Less tilt means more efficient energy capture. Target: less than 6 degrees</li>
+      <li><strong>Durability:</strong> Must remain structurally sound through extended testing. Target: withstand at least a full day of testing</li>
+      <li><strong>Line Adjustability:</strong> Allows a wide range of mooring line angles to be tested. Target: at least 3 cm of mooring line adjustability</li>
+    </ul>
+
+    <!-- Gallery — uses your actual wind turbine photos -->
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="shot">
+        <img src="Images/Wind Turbine/3dPrint.jpeg" alt="3D printed foundation"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">3dPrint.jpeg</span>
+      </div>
+      <div class="shot">
+        <img src="Images/Wind Turbine/FEA.png" alt="FEA simulation results"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">FEA.png</span>
+      </div>
+    </div>
+
+    <h2>Video</h2>
+    <video controls preload="metadata">
+      <source src="Images/Wind Turbine/Floating.MOV" type="video/quicktime">
+      <source src="Images/Wind Turbine/Floating.MOV" type="video/mp4">
+      Your browser does not support this video format.
+    </video>
+    <video controls preload="metadata">
+      <source src="Images/Wind Turbine/Buoyancy.MOV" type="video/quicktime">
+      <source src="Images/Wind Turbine/Buoyancy.MOV" type="video/mp4">
+      Your browser does not support this video format.
+    </video>
+  </main>
+
+  <script src="nav.js"></script>
+</body>
+</html>

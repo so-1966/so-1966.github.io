@@ -1,0 +1,105 @@
+<!doctype html>
+<!-- ============================================================
+     quadcopter.html  —  CUSTOM QUADCOPTER PROJECT DETAIL PAGE
+     Edit the description, goals, and image paths below.
+     Shared look: style.css   Back to: projects.html
+     ============================================================ -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Custom Quadcopter — Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Nav is built automatically by nav.js — edit links there -->
+  <header id="nav" class="nav"></header>
+
+  <!-- ===== PROJECT DETAIL ===== -->
+  <main class="detail">
+    <a class="back-link" href="projects.html">← Back to Projects</a>
+
+    <h1>Custom Quadcopter</h1>
+    <p class="subtitle">Custom-designed and flight-tested drone — $350 budget</p>
+
+    <div class="hero-img">
+      <img src="Images/Quadcopter/FullAssembly.JPG" alt="Custom Quadcopter"
+           onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+      <span class="img-fallback">Images/Quadcopter/FullAssembly.JPG</span>
+    </div>
+
+    <h2>Description</h2>
+    <p>
+      Designed, built, and flight-tested a custom quadcopter, managing the development process from SolidWorks CAD modeling and 3D printing to electronics integration and PX4 configuration. Designed a lightweight, impact-resistant frame using nylon filament, optimizing its geometry for structural strength, weight savings, and ease of assembly. Refined the design through two iterations and optimized 3D-printing settings to improve the final build.
+    </p>
+    <p>
+      Integrated the flight controller, four individual electronic speed controllers (ESCs), motors, receiver, and LiPo power system, including building a custom power distribution board and calibrating the ESCs. Troubleshot electrical and mechanical issues throughout assembly and incorporated vibration-resistant locknuts and a simplified fastening system requiring just 10 fasteners to improve reliability and ease of maintenance.
+    </p>
+    <p>
+      Validated propulsion performance through thrust and power measurements, achieving 7.3 g/W of thrust efficiency at 50% throttle (490 g at 67 W) and approximately 700 g of thrust per motor at 125 W. The completed quadcopter achieved over 20 minutes of flight time at a total takeoff weight of approximately 1.75 kg, with a theoretical maximum thrust-to-weight ratio of 1.6:1. The project stayed within a $350 budget. Additional documentation, including project development and build details, is available on my Instagram.
+    </p>
+
+    <h2>Constraints</h2>
+    <ul>
+      <li>$350 total budget for all components and materials</li>
+      <li>Frame limited to 3D-printed designs only (no machined or purchased frames)</li>
+      <li>Inherited motors from a previous build — all other components designed around them</li>
+    </ul>
+
+    <h2>Goals</h2>
+    <ul>
+      <li>Design and build a fully functional quadcopter from scratch within budget</li>
+      <li>Achieve over 20 minutes of flight time at ~1.75 kg takeoff weight</li>
+      <li>Reach a thrust-to-weight ratio of at least 1.6:1</li>
+      <li>Optimize thrust efficiency (achieved 7.3 g/W at 50% throttle)</li>
+      <li>Create a lightweight, impact-resistant nylon frame optimized for 3D printing</li>
+      <li>Simplify maintenance with a 10-fastener assembly and vibration-resistant locknuts</li>
+    </ul>
+
+    <!-- Gallery — uses your actual quadcopter photos -->
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="shot">
+        <img src="Images/Quadcopter/TestingThrust.jpeg" alt="Thrust testing"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">TestingThrust.jpeg</span>
+      </div>
+      <div class="shot">
+        <img src="Images/Quadcopter/FrameAssembly.JPG" alt="Frame assembly"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">FrameAssembly.JPG</span>
+      </div>
+    </div>
+
+    <h2>Video</h2>
+
+    <video controls preload="metadata">
+      <source src="Images/Quadcopter/Flight Test.MOV" type="video/quicktime">
+      <source src="Images/Quadcopter/Flight Test.MOV" type="video/mp4">
+      Your browser does not support this video format.
+    </video>
+    <p class="video-caption">Full flight test of the completed quadcopter.</p>
+
+    <video controls preload="metadata">
+      <source src="Images/Quadcopter/ESCTest.MOV" type="video/quicktime">
+      <source src="Images/Quadcopter/ESCTest.MOV" type="video/mp4">
+      Your browser does not support this video format.
+    </video>
+    <p class="video-caption">Testing the circuit, power distribution board, and full-throttle motor test with the propeller mounted to a load cell for accurate thrust measurements.</p>
+
+    <video controls preload="metadata">
+      <source src="Images/Quadcopter/RPMTest.mov" type="video/quicktime">
+      <source src="Images/Quadcopter/RPMTest.mov" type="video/mp4">
+      Your browser does not support this video format.
+    </video>
+    <p class="video-caption">Using a digital laser tachometer to verify all motors and ESCs were running at the same RPM. This was necessary to diagnose and resolve a delay/tuning issue, ensuring consistent motor behavior across all four channels before flight.</p>
+  </main>
+
+  <script src="nav.js"></script>
+</body>
+</html>

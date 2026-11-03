@@ -1,0 +1,612 @@
+/* ============================================================
+   Style.css  —  SHARED STYLING FOR ALL PAGES
+   ============================================================
+   This single file controls the look of every page on the site.
+   Change a value here and every page updates automatically.
+
+   TABLE OF CONTENTS
+   -----------------
+   1. MASTER CONTROLS (colors, fonts — edit these first)
+   2. RESET (removes default browser spacing)
+   3. IMAGES (makes images responsive)
+   4. NAVIGATION BAR (top sticky bar with logo, links, social icons)
+   5. SOCIAL ICONS (Instagram, LinkedIn, GitHub buttons in the nav)
+   6. HOME PAGE (layout for the landing / about page)
+   7. PROJECT GRID (card layout on the projects page)
+   8. PROJECT DETAIL PAGE (individual project pages)
+   9. SPECS TABLE (optional table for project specifications)
+   10. GALLERY (photo grid on project detail pages)
+   11. MOBILE / RESPONSIVE (adjustments for smaller screens)
+   ============================================================ */
+
+
+/* ==========================================================
+   1. MASTER CONTROLS
+   ----------------------------------------------------------
+   These CSS variables set the core look of the whole site.
+   Change a color or font here and it updates everywhere.
+   ========================================================== */
+:root {
+  --accent:   #1a1a1a;   /* Highlight color — used for active nav link underline */
+  --ink:      #141414;   /* Main text color — headings, body text, links */
+  --ink-soft: #666;      /* Muted text color — subtitles, captions, back-links */
+  --line:     #e4e4e4;   /* Border color — separators, table borders, hover lines */
+  --surface:  #ededed;   /* Placeholder background — shown when an image is missing */
+  --bg:       #ffffff;   /* Page background color */
+  --font:     "Space Grotesk", system-ui, sans-serif;  /* Main font family */
+}
+
+
+/* ==========================================================
+   2. RESET
+   ----------------------------------------------------------
+   Removes default margins/padding from all elements.
+   Sets box-sizing so padding doesn't increase element width.
+   ========================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ==========================================================
+   3. BODY & IMAGES
+   ----------------------------------------------------------
+   Sets the default font, text color, and page background.
+   Makes all images scale down to fit their containers.
+   ========================================================== */
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;               /* Space between lines of text */
+  -webkit-font-smoothing: antialiased;  /* Smoother text on Mac/Chrome */
+}
+
+img {
+  max-width: 100%;   /* Images never overflow their container */
+  display: block;    /* Removes tiny gap below images */
+}
+
+
+/* ==========================================================
+   4. NAVIGATION BAR
+   ----------------------------------------------------------
+   Sticky bar at the top of every page.
+   Left side: logo (your initials as a link to home).
+   Right side: text links (Home, Projects) + social icons.
+   The background is semi-transparent with a blur effect.
+   ========================================================== */
+.nav {
+  position: sticky;        /* Stays at the top when you scroll */
+  top: 0;
+  z-index: 10;             /* Keeps nav above other content */
+  display: flex;           /* Logo left, links right */
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 56px;      /* Vertical and horizontal spacing */
+  background: color-mix(in srgb, var(--bg) 88%, transparent);  /* See-through white */
+  backdrop-filter: blur(8px);   /* Frosted glass effect behind the bar */
+}
+
+/* Logo text — your initials. Change font-size to make it bigger/smaller */
+.logo {
+  font-weight: 1000;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--ink);
+  letter-spacing: -0.04em;  /* Tighter letter spacing for a clean look */
+}
+
+/* Right side of the nav — holds text links + social icons */
+.nav-right {
+  display: flex;
+  gap: 34px;            /* Space between each link and the social icons */
+  align-items: center;
+}
+
+/* Individual text links (Home, Projects) */
+.nav-right a.text-link {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 500;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;  /* Invisible underline by default */
+}
+
+/* Underline appears on hover */
+.nav-right a.text-link:hover {
+  border-bottom-color: var(--line);
+}
+
+/* Active page gets a dark underline — add class="active" to the current page link */
+.nav-right a.text-link.active {
+  border-bottom-color: var(--accent);
+}
+
+
+/* ==========================================================
+   5. SOCIAL ICONS
+   ----------------------------------------------------------
+   Small icon buttons in the nav bar (Instagram, LinkedIn, GitHub).
+   Each icon is an inline SVG that inherits the text color.
+   To change icon size: edit the width/height values below.
+   ========================================================== */
+.socials {
+  display: flex;
+  gap: 20px;             /* Space between each icon */
+  align-items: center;
+  margin-left: 6px;      /* Small extra space separating icons from text links */
+}
+
+/* Each social icon link */
+.socials a {
+  color: var(--ink);
+  display: inline-flex;
+  opacity: 0.85;          /* Slightly faded by default */
+  transition: opacity 0.2s;
+}
+
+/* Full opacity on hover */
+.socials a:hover {
+  opacity: 1;
+}
+
+/* The SVG icon itself — controls the icon size */
+.socials svg {
+  width: 21px;
+  height: 21px;
+  fill: currentColor;    /* Icon color follows the link's text color */
+  display: block;
+}
+
+
+/* ==========================================================
+   6. HOME PAGE
+   ----------------------------------------------------------
+   Layout for index.html — a two-column grid with your
+   intro text on the left and a photo on the right.
+   ========================================================== */
+.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* Two equal columns */
+  gap: 56px;                         /* Space between text and photo */
+  align-items: center;
+  max-width: 1150px;                 /* Keeps content from getting too wide */
+  margin: 0 auto;                    /* Centers the grid horizontally */
+  padding: 60px 48px;
+}
+
+/* Your name — large heading */
+.home h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
+/* Subtitle below your name (e.g., "Mechanical Engineer") */
+.tagline {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 18px 0 30px;
+}
+
+/* About paragraph — text-indent adds a tab at the start of each paragraph */
+.about {
+  font-size: 1.1rem;
+  color: #2a2a2a;
+  max-width: 54ch;       /* Limits line length for readability */
+  line-height: 1.50;
+  text-indent: 2em;      /* Indents the first line like a tab */
+}
+
+/* Stacked links below the about text (e.g., Resume) */
+.home-links {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 40px;
+  align-items: flex-start;
+}
+
+.home-links a {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+.home-links a:hover {
+  color: var(--accent);
+}
+
+/* Photo and placeholder — shown when the image file is missing */
+.home-photo, .card-img {
+  position: relative;
+}
+
+.home-photo img {
+  width: 100%;
+  aspect-ratio: 4/5;       /* Portrait crop */
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Fallback text shown when image file doesn't exist */
+.home-photo .photo-fallback,
+.card-img .img-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  border-radius: 4px;
+}
+
+.home-photo.empty,
+.card-img.empty {
+  aspect-ratio: 4/5;
+}
+
+.home-photo.empty .photo-fallback,
+.card-img.empty .img-fallback {
+  display: flex;
+}
+
+
+/* ==========================================================
+   7. PROJECT GRID
+   ----------------------------------------------------------
+   Card layout on projects.html.
+   Uses FLEXBOX (not CSS Grid) so the bottom row of cards
+   automatically centers when there are fewer than 3.
+   Layout: 3 cards on top row, 2 centered on bottom row.
+
+   To change cards per row: adjust the width calc() in .card.
+   To change card spacing: adjust the gap value in .grid.
+   ========================================================== */
+.grid {
+  display: flex;              /* Flexbox lets bottom row center naturally */
+  flex-wrap: wrap;            /* Cards wrap to the next line */
+  justify-content: center;   /* Centers the bottom row when it has fewer cards */
+  gap: 36px 28px;            /* 36px between rows, 28px between columns */
+  max-width: 1200px;         /* Maximum width of the grid */
+  margin: 0 auto;            /* Centers the grid on the page */
+  padding: 50px 48px 90px;   /* Top, sides, and bottom spacing */
+}
+
+/* Each project card — the entire card is a clickable link */
+.card {
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  width: calc((100% - 56px) / 3);  /* 3 cards per row (56px = two 28px gaps) */
+}
+
+/* Card thumbnail image container */
+.card-img {
+  aspect-ratio: 1/1;        /* Square thumbnails */
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--surface);
+}
+
+/* The thumbnail image itself */
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                /* Crops to fill the square without stretching */
+  transition: transform 0.4s ease; /* Smooth zoom effect on hover */
+}
+
+/* Slight zoom when hovering a card */
+.card:hover .card-img img {
+  transform: scale(1.04);
+}
+
+/* Placeholder shown when image file is missing */
+.card-img.empty {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1/1;
+}
+
+/* Project title below each card image */
+.card h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 18px;
+}
+
+/* Underline the title on hover */
+.card:hover h3 {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+
+/* ==========================================================
+   8. PROJECT DETAIL PAGE
+   ----------------------------------------------------------
+   Layout for individual project pages (e.g., fsae-car.html).
+   Single-column centered layout with a max width for readability.
+   Includes: back link, title, subtitle, hero image,
+   description text, goals section, and a photo gallery.
+   ========================================================== */
+.detail {
+  max-width: 820px;          /* Keeps text at a comfortable reading width */
+  margin: 0 auto;            /* Centers the content */
+  padding: 50px 48px 90px;
+}
+
+/* "← Back to Projects" link at the top */
+.back-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.back-link:hover {
+  color: var(--ink);
+}
+
+/* Project title on detail page */
+.detail h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* Subtitle / short tagline below the title */
+.detail .subtitle {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  margin: 10px 0 36px;
+}
+
+/* Hero image — large featured image at the top of the detail page */
+.detail .hero-img {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  background: var(--surface);
+}
+
+.detail .hero-img img {
+  width: 100%;
+  aspect-ratio: 16/9;       /* Widescreen crop for the hero image */
+  object-fit: cover;
+}
+
+/* Placeholder when hero image file is missing */
+.detail .hero-img.empty {
+  aspect-ratio: 16/9;
+  display: grid;
+  place-items: center;
+}
+
+.detail .hero-img .img-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.detail .hero-img.empty .img-fallback {
+  display: flex;
+}
+
+/* Section headings (Description, Goals, Gallery, etc.) */
+.detail h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 40px 0 14px;
+}
+
+/* Body text on detail pages — text-indent adds a tab to the first line */
+.detail p {
+  font-size: 1.05rem;
+  color: #2a2a2a;
+  margin-bottom: 16px;
+  max-width: 70ch;          /* Limits line length for comfortable reading */
+  text-indent: 2em;         /* Indents the first line like a tab */
+}
+
+/* Bulleted lists on detail pages (used for Goals, Design Criteria, etc.) */
+.detail ul {
+  font-size: 1.05rem;
+  color: #2a2a2a;
+  max-width: 70ch;
+  margin: 0 0 16px 20px;    /* Left indent for the bullets */
+  line-height: 1.65;
+}
+
+.detail li {
+  margin-bottom: 8px;       /* Space between each bullet point */
+}
+
+/* Video clips on detail pages — plays inline with rounded corners */
+.detail video {
+  width: 100%;
+  border-radius: 6px;
+  margin: 14px 0 6px;
+  background: var(--surface);  /* Shows while video loads */
+}
+
+/* Caption text below a video — describes what the clip shows */
+.video-caption {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  margin: 0 0 28px;
+  font-style: italic;
+}
+
+
+/* ==========================================================
+   9. SPECS TABLE (optional)
+   ----------------------------------------------------------
+   A two-column table for listing project specifications.
+   Use <table class="specs"> in your HTML.
+   Left column: label (e.g., "Motor"). Right column: value.
+   ========================================================== */
+.specs {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.98rem;
+}
+
+/* Label column (left side) */
+.specs th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ink-soft);
+  width: 38%;
+  padding: 10px 14px 10px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+/* Value column (right side) */
+.specs td {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+
+/* ==========================================================
+   10. GALLERY
+   ----------------------------------------------------------
+   A grid of photos on project detail pages.
+   Displays images in a 2-column grid by default.
+   Each image is cropped to a 4:3 landscape ratio.
+   ========================================================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* 2 images per row */
+  gap: 14px;                               /* Space between photos */
+  margin: 24px 0;
+}
+
+/* Each photo container */
+.gallery .shot {
+  position: relative;
+  aspect-ratio: 4/3;        /* Landscape crop */
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+/* The photo itself */
+.gallery .shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder when gallery image is missing */
+.gallery .shot .img-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
+.gallery .shot.empty {
+  display: grid;
+  place-items: center;
+}
+
+.gallery .shot.empty .img-fallback {
+  display: flex;
+}
+
+
+/* ==========================================================
+   11. MOBILE / RESPONSIVE
+   ----------------------------------------------------------
+   Adjusts layouts for smaller screens.
+   - 820px and below: nav gets tighter, home goes single-column,
+     project grid goes to 2 cards per row.
+   - 500px and below: project grid goes to 1 card per row,
+     gallery goes to 1 image per row.
+   ========================================================== */
+
+/* --- TABLET (820px and below) --- */
+@media (max-width: 820px) {
+  /* Tighter nav padding on smaller screens */
+  .nav {
+    padding: 16px 20px;
+  }
+
+  /* Reduce gap between nav items */
+  .nav-right {
+    gap: 18px;
+  }
+
+  /* Tighter social icon spacing */
+  .socials {
+    gap: 14px;
+  }
+
+  /* Home page: stack text above photo instead of side by side */
+  .home {
+    grid-template-columns: 1fr;
+    padding: 40px 22px;
+    gap: 34px;
+  }
+
+  /* Smaller name heading on mobile */
+  .home h1 {
+    font-size: 2.8rem;
+  }
+
+  /* Project grid: 2 cards per row on tablet */
+  .grid {
+    padding: 30px 22px 60px;
+  }
+
+  .card {
+    width: calc((100% - 28px) / 2);   /* 2 cards per row (one 28px gap) */
+  }
+
+  /* Tighter padding on detail and home sections */
+  .detail, .home {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+/* --- PHONE (500px and below) --- */
+@media (max-width: 500px) {
+  /* Project grid: 1 card per row on phone */
+  .card {
+    width: 100%;
+  }
+
+  /* Gallery: 1 image per row on phone */
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}

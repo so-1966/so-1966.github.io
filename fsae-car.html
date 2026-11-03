@@ -1,0 +1,75 @@
+<!doctype html>
+<!-- ============================================================
+     fsae-car.html  —  FSAE CAR PROJECT DETAIL PAGE
+     Edit the description, goals, and image paths below.
+     Shared look: style.css   Back to: projects.html
+     ============================================================ -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FSAE Car — Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Nav is built automatically by nav.js — edit links there -->
+  <header id="nav" class="nav"></header>
+
+  <!-- ===== PROJECT DETAIL ===== -->
+  <main class="detail">
+    <a class="back-link" href="projects.html">← Back to Projects</a>
+
+    <!-- EDIT: Project title -->
+    <h1>FSAE Car</h1>
+    <p class="subtitle">Suspension Lead — Formula SAE Internal Combustion</p>
+
+    <div class="hero-img">
+      <img src="Images/fsae-car.jpg" alt="FSAE Car"
+           onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+      <span class="img-fallback">Images/fsae-car.jpg</span>
+    </div>
+
+    <h2>Description</h2>
+    <p>
+      As Suspension Lead for an inaugural Formula SAE Internal Combustion (IC) team, I led the development of a custom suspension system from initial vehicle dynamics analysis through CAD design and structural simulation. Using MATLAB, Tire Test Consortium (TTC) data, and OptimumKinematics, I evaluated tire behavior and suspension geometry to establish design targets for camber, roll center migration, steering geometry, and handling. I translated these targets into SolidWorks, designing custom uprights, control arms, rocker assemblies, and pushrod linkages while coordinating suspension hardpoints with the chassis and powertrain teams. Throughout the design process, I balanced kinematic performance with manufacturing feasibility, ease of assembly, and integration constraints.
+    </p>
+    <p>
+      To evaluate structural integrity, I conducted finite element analysis (FEA) in ANSYS of custom suspension components under axial, radial, and bending loads, with multiple boundary conditions. I compared mesh resolutions to assess the consistency of the results and iteratively redesigned the rocker, upright, and pushrod positioning to address stress concentrations, bending, buckling risk, and component deflection. I targeted a minimum factor of safety of 2 while investigating control arm deflection and its potential effects on suspension compliance. As the primary driver of suspension development during the initial design phase, I established the system's engineering foundation and now lead team meetings while teaching new members CAD skills and suspension design principles. The suspension has progressed through CAD design and simulation, with manufacturing and physical testing remaining future steps.
+    </p>
+
+    <h2>Goals</h2>
+    <ul>
+      <li>Design a complete, competition-ready suspension system for an inaugural FSAE IC vehicle</li>
+      <li>Establish kinematic targets for camber, roll center, and steering geometry using MATLAB and TTC data</li>
+      <li>Achieve a minimum factor of safety of 2 on all custom suspension components through FEA in ANSYS</li>
+      <li>Coordinate suspension hardpoints with chassis and powertrain teams for full-vehicle integration</li>
+      <li>Mentor new team members in CAD skills and suspension design principles</li>
+      <li>Progress the system through manufacturing and physical testing in future phases</li>
+    </ul>
+
+    <!-- EDIT: Gallery — add your FSAE photos below.
+         Copy a <div class="shot"> block for each additional photo.
+         Replace the src and alt attributes with your image info. -->
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="shot">
+        <img src="Images/fsae-car.jpg" alt="FSAE Car photo 1"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">Add your photo here</span>
+      </div>
+      <div class="shot">
+        <img src="Images/fsae-car-2.jpg" alt="FSAE Car photo 2"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">Add your photo here</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="nav.js"></script>
+</body>
+</html>

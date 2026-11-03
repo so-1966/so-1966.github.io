@@ -1,0 +1,87 @@
+<!doctype html>
+<!-- ============================================================
+     projects.html  —  PROJECT GALLERY PAGE
+     Shows all projects as clickable cards in a centered grid.
+     Row 1: 3 projects  |  Row 2: 2 projects (centered)
+     Clicking a card opens that project's detail page.
+     Shared look: style.css
+     ============================================================ -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Mechanical Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Nav is built automatically by nav.js — edit links there -->
+  <header id="nav" class="nav"></header>
+
+  <!-- ===== PROJECT GRID =====
+       Order: FSAE Car, Custom Quadcopter, RC Car (top row)
+              Water Incubator, Wind Turbine (bottom row, centered)
+       Each card links to its own detail page.
+       To add a project: copy a <a class="card"> block and update
+       the href, image src, alt text, and title. ===== -->
+  <section class="grid">
+
+    <!-- 1. FSAE Car -->
+    <a class="card" href="fsae-car.html">
+      <div class="card-img">
+        <img src="Images/fsae-car.jpg" alt="FSAE Car"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">Images/fsae-car.jpg</span>
+      </div>
+      <h3>FSAE Car</h3>
+    </a>
+
+    <!-- 2. Custom Quadcopter -->
+    <a class="card" href="quadcopter.html">
+      <div class="card-img">
+        <img src="Images/Quadcopter/FullAssembly.JPG" alt="Custom Quadcopter"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">Images/Quadcopter/FullAssembly.JPG</span>
+      </div>
+      <h3>Custom Quadcopter</h3>
+    </a>
+
+    <!-- 3. RC Car -->
+    <a class="card" href="rc-car.html">
+      <div class="card-img">
+        <img src="Images/Rc Car/ZoomedIn.jpeg" alt="RC Car"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">Images/Rc Car/ZoomedIn.jpeg</span>
+      </div>
+      <h3>RC Car</h3>
+    </a>
+
+    <!-- 4. Water Incubator -->
+    <a class="card" href="water-incubator.html">
+      <div class="card-img">
+        <img src="Images/Water Incubator/Schematic.png" alt="Water Incubator"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">Images/Water Incubator/Schematic.png</span>
+      </div>
+      <h3>Water Incubator</h3>
+    </a>
+
+    <!-- 5. Wind Turbine -->
+    <a class="card" href="wind-turbine.html">
+      <div class="card-img">
+        <img src="Images/Wind Turbine/Weldments.jpeg" alt="Wind Turbine"
+             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
+        <span class="img-fallback">Images/Wind Turbine/Weldments.jpeg</span>
+      </div>
+      <h3>Wind Turbine</h3>
+    </a>
+
+  </section>
+
+  <script src="nav.js"></script>
+</body>
+</html>
