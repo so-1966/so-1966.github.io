@@ -428,6 +428,9 @@ img {
   max-width: 70ch;          /* Limits line length for comfortable reading */
   text-indent: 2em;         /* Indents the first line like a tab */
 }
+.detail .subtitle {
+  text-indent: 0;           /* No indent on the subtitle line */
+}
 
 /* Bulleted lists on detail pages (used for Goals, Design Criteria, etc.) */
 .detail ul {
