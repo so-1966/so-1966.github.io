@@ -45,17 +45,17 @@
      index.html → "Home" is active.  Everything else → "Projects".
      ---------------------------------------------------------- */
   var page = window.location.pathname.split("/").pop();
-  var homeActive = (page === "" || page === "index.html") ? " active" : "";
-  var projectsActive = (page !== "" && page !== "index.html") ? " active" : "";
+  var homeActive = (page === "" || page === "index.html" || page === "home.html") ? " active" : "";
+  var projectsActive = (page !== "" && page !== "index.html" && page !== "home.html") ? " active" : "";
 
   /* ----------------------------------------------------------
      BUILD THE NAV HTML
      Assembles the logo, text links, and social icon links.
      ---------------------------------------------------------- */
   var html = ''
-    + '<a class="logo" href="index.html">' + logoText + '</a>'
+    + '<a class="logo" href="home.html">' + logoText + '</a>'
     + '<div class="nav-right">'
-    +   '<a class="text-link' + homeActive + '" href="index.html">Home</a>'
+    +   '<a class="text-link' + homeActive + '" href="home.html">Home</a>'
     +   '<a class="text-link' + projectsActive + '" href="projects.html">Projects</a>'
     +   '<div class="socials">'
     +     '<a href="' + instagram + '" target="_blank" aria-label="Instagram">' + instagramIcon + '</a>'
