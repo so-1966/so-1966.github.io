@@ -34,6 +34,7 @@
   --surface:  #ededed;   /* Placeholder background — shown when an image is missing */
   --bg:       #ffffff;   /* Page background color */
   --font:     "Space Grotesk", system-ui, sans-serif;  /* Main font family */
+  --gallery-width: 70%;     /* Gallery image width — adjust this to resize all gallery images */
 }
 
 
@@ -503,26 +504,27 @@ img {
    Each image is cropped to a 4:3 landscape ratio.
    ========================================================== */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);   /* 2 images per row */
-  gap: 14px;                               /* Space between photos */
+  display: flex;
+  flex-direction: column;                  /* One image per row */
+  align-items: center;                     /* Center images horizontally */
+  gap: 24px;
   margin: 24px 0;
 }
 
 /* Each photo container */
 .gallery .shot {
   position: relative;
-  aspect-ratio: 4/3;        /* Landscape crop */
+  width: var(--gallery-width);
   border-radius: 4px;
   overflow: hidden;
-  background: var(--surface);
+  text-align: center;
 }
 
 /* The photo itself */
 .gallery .shot img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  border-radius: 4px;
 }
 
 /* Placeholder when gallery image is missing */
@@ -546,15 +548,11 @@ img {
 }
 
 /* Show full image without cropping (for CAD renders, schematics, GIFs) */
+.detail.contain .hero-img {
+  background: var(--bg);
+}
 .detail.contain .hero-img img {
   object-fit: contain;
-}
-.detail.contain .gallery .shot {
-  aspect-ratio: auto;
-}
-.detail.contain .gallery .shot img {
-  object-fit: contain;
-  height: auto;
 }
 
 
