@@ -545,6 +545,18 @@ img {
   display: flex;
 }
 
+/* Show full image without cropping (for CAD renders, schematics, GIFs) */
+.detail.contain .hero-img img {
+  object-fit: contain;
+}
+.detail.contain .gallery .shot {
+  aspect-ratio: auto;
+}
+.detail.contain .gallery .shot img {
+  object-fit: contain;
+  height: auto;
+}
+
 
 /* ==========================================================
    11. MOBILE / RESPONSIVE

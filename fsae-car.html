@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- ============================================================
-     fsae-car.html  —  FSAE CAR PROJECT DETAIL PAGE
+     fsae-car.html  —  FSAE SUSPENSION PROJECT DETAIL PAGE
      Edit the description, goals, and image paths below.
      Shared look: style.css   Back to: projects.html
      ============================================================ -->
@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FSAE Car — Projects</title>
+  <title>FSAE Suspension — Projects</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -21,17 +21,16 @@
   <header id="nav" class="nav"></header>
 
   <!-- ===== PROJECT DETAIL ===== -->
-  <main class="detail">
+  <main class="detail contain">
     <a class="back-link" href="projects.html">← Back to Projects</a>
 
-    <!-- EDIT: Project title -->
-    <h1>FSAE Car</h1>
+    <h1>FSAE Suspension</h1>
     <p class="subtitle">Suspension Lead — Formula SAE Internal Combustion</p>
 
     <div class="hero-img">
-      <img src="Images/fsae-car.jpg" alt="FSAE Car"
+      <img src="Images/FSAE/FullSuspension.png" alt="FSAE Full Suspension Assembly"
            onerror="this.style.display='none';this.parentNode.classList.add('empty')">
-      <span class="img-fallback">Images/fsae-car.jpg</span>
+      <span class="img-fallback">Images/FSAE/FullSuspension.png</span>
     </div>
 
     <h2>Description</h2>
@@ -41,6 +40,14 @@
     <p>
       To evaluate structural integrity, I conducted finite element analysis (FEA) in ANSYS of custom suspension components under axial, radial, and bending loads, with multiple boundary conditions. I compared mesh resolutions to assess the consistency of the results and iteratively redesigned the rocker, upright, and pushrod positioning to address stress concentrations, bending, buckling risk, and component deflection. I targeted a minimum factor of safety of 2 while investigating control arm deflection and its potential effects on suspension compliance. As the primary driver of suspension development during the initial design phase, I established the system's engineering foundation and now lead team meetings while teaching new members CAD skills and suspension design principles. The suspension has progressed through CAD design and simulation, with manufacturing and physical testing remaining future steps.
     </p>
+
+    <h2>Constraints</h2>
+    <ul>
+      <li>Design for manufacturability to keep fabrication costs low and avoid complex machining</li>
+      <li>All custom components must be feasible with available manufacturing methods (3D printing, waterjet, manual machining)</li>
+      <li>Suspension hardpoints constrained by chassis tube geometry and powertrain packaging</li>
+      <li>Limited to off-the-shelf coilovers, bearings, and fasteners to reduce lead time and cost</li>
+    </ul>
 
     <h2>Goals</h2>
     <ul>
@@ -52,20 +59,23 @@
       <li>Progress the system through manufacturing and physical testing in future phases</li>
     </ul>
 
-    <!-- EDIT: Gallery — add your FSAE photos below.
-         Copy a <div class="shot"> block for each additional photo.
-         Replace the src and alt attributes with your image info. -->
     <h2>Gallery</h2>
     <div class="gallery">
       <div class="shot">
-        <img src="Images/fsae-car.jpg" alt="FSAE Car photo 1"
-             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
-        <span class="img-fallback">Add your photo here</span>
+        <img src="Images/FSAE/Rocker.png" alt="Revised rocker design">
+        <p class="video-caption">Revised rocker design after running FEA simulations and removing excess material to improve weight efficiency while maintaining structural integrity.</p>
       </div>
       <div class="shot">
-        <img src="Images/fsae-car-2.jpg" alt="FSAE Car photo 2"
-             onerror="this.style.display='none';this.parentNode.classList.add('empty')">
-        <span class="img-fallback">Add your photo here</span>
+        <img src="Images/FSAE/UprightAssembly.png" alt="Wheel assembly">
+        <p class="video-caption">Complete wheel assembly including the upright, upper and lower control arms, clevis mounts, wheel hub, retaining nut, and bearing interfaces.</p>
+      </div>
+      <div class="shot">
+        <img src="Images/FSAE/RockerV1Analysis.gif" alt="Rocker FEA simulation">
+        <p class="video-caption">FEA simulation of the rocker under heave (vertical chassis motion), modeling the forces transmitted through the coilover, damper, and pushrod. The stress distribution highlights areas where material can be removed to reduce weight without compromising strength.</p>
+      </div>
+      <div class="shot">
+        <img src="Images/FSAE/FrontPushrodAnalsysis.gif" alt="Front pushrod buckling analysis">
+        <p class="video-caption">Buckling analysis of the front pushrod under worst-case loading at maximum bump. Pushrod tubes are most susceptible to buckling failure, so this simulation validates the tube geometry and wall thickness under the highest expected compressive loads.</p>
       </div>
     </div>
   </main>
