@@ -34,7 +34,7 @@
   --surface:  #ededed;   /* Placeholder background — shown when an image is missing */
   --bg:       #ffffff;   /* Page background color */
   --font:     "Space Grotesk", system-ui, sans-serif;  /* Main font family */
-  --gallery-width: 70%;     /* Gallery image width — adjust this to resize all gallery images */
+  --gallery-size: 4/3;      /* Gallery image aspect ratio — adjust to resize (e.g. 1/1 for square, 16/9 for wide) */
 }
 
 
@@ -504,17 +504,15 @@ img {
    Each image is cropped to a 4:3 landscape ratio.
    ========================================================== */
 .gallery {
-  display: flex;
-  flex-direction: column;                  /* One image per row */
-  align-items: center;                     /* Center images horizontally */
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* 2 images per row */
+  gap: 14px;
   margin: 24px 0;
 }
 
 /* Each photo container */
 .gallery .shot {
   position: relative;
-  width: var(--gallery-width);
   border-radius: 4px;
   overflow: hidden;
   text-align: center;
@@ -523,8 +521,15 @@ img {
 /* The photo itself */
 .gallery .shot img {
   width: 100%;
-  height: auto;
+  aspect-ratio: var(--gallery-size);
+  object-fit: cover;
   border-radius: 4px;
+}
+
+/* For CAD/GIF images — show full image without cropping */
+.detail.contain .gallery .shot img {
+  object-fit: contain;
+  background: var(--surface);
 }
 
 /* Placeholder when gallery image is missing */
